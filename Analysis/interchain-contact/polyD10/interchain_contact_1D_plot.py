@@ -19,47 +19,6 @@ non_exchange=[i for i in range(30) if i not in exchange]
 print(non_exchange)
 print(exchange)
 
-fig, ax = plt.subplots(figsize=(8,6))
-font_path = '/grain/liguo/biocondensates/PMF-test/pulldim-YYY/Arial.ttf'
-font_prop = font_manager.FontProperties(fname=font_path, size=20)
-tick_prop = font_manager.FontProperties(fname=font_path, size=16)
-legend_prop = font_manager.FontProperties(fname=font_path, size=16) 
-cm = plt.cm.get_cmap('tab20')
-for i in non_exchange:    
-    data = np.loadtxt('interchain_contact_monomer{}.xvg'.format(i))
-    color_index=i%20
-    ax.plot(data, color=cm.colors[color_index])  
-ax.spines[['right', 'top']].set_visible(False)
-ax.set_ylabel('Contact Number',fontproperties=font_prop)
-ax.set_xlabel('Residue',fontproperties=font_prop)
-#plt.xlim(0.2,0.45)
-plt.xticks(fontproperties=tick_prop)
-plt.yticks(fontproperties=tick_prop)    
-#plt.legend(prop=legend_prop)
-#plt.savefig('interchain_contact_1D_polyD10_nonexchange.png',dpi=600,bbox_inches='tight')
-#plt.show()  
-
-
-fig, ax = plt.subplots(figsize=(8,6))
-font_path = '/grain/liguo/biocondensates/PMF-test/pulldim-YYY/Arial.ttf'
-font_prop = font_manager.FontProperties(fname=font_path, size=20)
-tick_prop = font_manager.FontProperties(fname=font_path, size=16)
-legend_prop = font_manager.FontProperties(fname=font_path, size=16) 
-cm = plt.cm.get_cmap('tab20')
-for i in exchange:
-    data = np.loadtxt('interchain_contact_monomer{}.xvg'.format(i))
-    color_index=i%20
-    ax.plot(data, color=cm.colors[color_index])
-ax.spines[['right', 'top']].set_visible(False)
-ax.set_ylabel('Contact Number',fontproperties=font_prop)
-ax.set_xlabel('Residue',fontproperties=font_prop)
-#plt.xlim(0.2,0.45)
-plt.xticks(fontproperties=tick_prop)
-plt.yticks(fontproperties=tick_prop)
-#plt.legend(prop=legend_prop)
-#plt.savefig('interchain_contact_1D_polyD10_exchange.png',dpi=600,bbox_inches='tight')
-#plt.show()
-
 
 fig, ax = plt.subplots(figsize=(8,6))
 font_path = '/grain/liguo/biocondensates/PMF-test/pulldim-YYY/Arial.ttf'
