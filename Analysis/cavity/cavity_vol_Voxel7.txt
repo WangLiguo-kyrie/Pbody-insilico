@@ -1,0 +1,1 @@
+ensemble average cavity volume:82.8681875nm3
